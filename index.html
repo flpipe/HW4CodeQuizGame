@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
   <title>Code Quiz</title>
+
 </head>
+
 <body>
-  <h1>Get Ready for some code quiz</h1>
+  <!--Nav Bar to hold the basic buttons -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container navbar-container mx-0">
+      <div class="row w-100">
+        <div class="col-4 col-md-2">
+          <button type="button" id="highscore-button" class="btn btn-info">View High Scores</button>
+        </div>
+        <div class="col-3 col-md-7">
+        </div>
+        <div class="col-6 col-md-3">
+          <form>
+            <!-- section to hold time left button-->
+            <div class="form-group row">
+              <label for="time-remaining" class="col-sm-12 col-form-label">Time Left</label>
+              <div class="col-sm-5">
+                <input type="number" readonly class="form-control" id="time-remaining" placeholder="0">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Initial area for the code quiz and when quiz starts, this area will disappear-->
+  <div id="landing-container" class="container">
+    <div class="row mb-3">
+      <div class="col-12 text-center">
+        <h1>Code Quiz</h1>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 text-center">
+        <h2>Welcome!!..Please Note..Time will be deducted for every wrong answer!!</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <button id="start-button" type="button" class="btn btn-secondary btn-lg">Start Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- area to display questions and it is initially not displayed-->
+  <div id="quiz-container" class="container d-none">
+  </div>
+
+  <div id="final-container" class="container d-none">
+    <div class="row">
+      <div class="col-12 text-center">
+        <!--form to display the final score value -->
+        <form>
+          <div class="form-group row">
+            <label for="final-score" class="col-sm-7 col-form-label">Final Score</label>
+            <div class="col-sm-5">
+              <input type="number" readonly class="form-control" id="final-score" placeholder="0">
+            </div>
+          </div>
+        </form>
+
+        <!--Form to take the name input - initials for score display-->
+        <form>
+          <div class="form-group">
+            <label for="initials-entry">Initials</label>
+            <input type="text" class="form-control" id="initials-entry" placeholder="Enter initials">
+          </div>
+          <button id="submit-initials" type="button" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!--Display are for the list of high scores -->
+  <div id="highscore-container" class="container d-none">
+    <div class="row">
+      <div class="col-2"></div>
+      <div id="highscore-table" class="col-8">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>High Scores</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+  <!--javascript code for all the logic behind the quiz-->
+  <script src="script.js"></script>
 </body>
+
 </html>
